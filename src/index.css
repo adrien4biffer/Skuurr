@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-sans: 'Manrope', system-ui, sans-serif;
+
+  --color-cream: #fdf6ea;
+  --color-cream-dark: #f3e6d0;
+  --color-charcoal: #2a1c14;
+  --color-charcoal-soft: #4a352a;
+  --color-tomato: #a4231b;
+  --color-tomato-dark: #7a1810;
+  --color-tomato-light: #c9432f;
+  --color-olive: #56603e;
+  --color-olive-light: #77835a;
+  --color-gold: #d0a24c;
+  --color-gold-light: #e6c374;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .bg-noise {
+    background-image: radial-gradient(
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 3px 3px;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translateY(-14px) rotate(var(--rot, 0deg));
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes steam {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+  }
+  30% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scaleX(1.4);
+  }
+}
+
+.animate-steam {
+  animation: steam 3.5s ease-in-out infinite;
+}

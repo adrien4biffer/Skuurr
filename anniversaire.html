@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Réserver un anniversaire — Urba Kids Orbe</title>
+<meta name="description" content="Réservez l'anniversaire de votre enfant chez Urba Kids à Orbe : choisissez le créneau, l'emplacement, et vos suppléments (gâteau, bonbons, pinata, fondue).">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.urba-kids.ch/anniversaire.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Urba Kids">
+<meta property="og:title" content="Réserver un anniversaire — Urba Kids Orbe">
+<meta property="og:description" content="Un espace dédié pour fêter les 4 ans comme les 12 ans, avec goûter et surveillance incluse. Réservez votre créneau en quelques clics.">
+<meta property="og:url" content="https://www.urba-kids.ch/anniversaire.html">
+<meta property="og:image" content="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-01-1024x683.jpg">
+<meta property="og:locale" content="fr_CH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Réserver un anniversaire — Urba Kids Orbe">
+<meta name="twitter:description" content="Réservez l'anniversaire de votre enfant en quelques clics : créneau, emplacement, suppléments.">
+<meta name="theme-color" content="#FFFBF3">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/booking.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.urba-kids.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Anniversaires", "item": "https://www.urba-kids.ch/anniversaire.html" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Réservation d'anniversaire enfant",
+      "name": "Anniversaires chez Urba Kids",
+      "description": "Formule anniversaire avec emplacement réservé, goûter et suppléments (gâteau, bonbons, pinata, fondue au chocolat) au centre de jeux Urba Kids à Orbe.",
+      "provider": { "@type": "AmusementPark", "name": "Urba Kids", "@id": "https://www.urba-kids.ch/#business" },
+      "areaServed": { "@type": "City", "name": "Orbe" },
+      "url": "https://www.urba-kids.ch/anniversaire.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#top" class="skip-link">Aller au contenu principal</a>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Gestion des cookies">
+  <p>Nous utilisons des cookies pour mesurer l'audience du site et améliorer votre expérience. Consultez notre <a href="/confidentialite.html">politique de confidentialité</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-primary btn-sm" data-cookie-accept>Accepter</button>
+    <button class="btn btn-ghost btn-sm" data-cookie-decline>Refuser</button>
+  </div>
+</div>
+
+<header class="booking-header" id="siteHeader">
+  <div class="wrap">
+    <a href="/index.html" class="logo"><span class="dot"></span>Urba Kids</a>
+    <span class="breadcrumb-nav"><a href="/index.html">Accueil</a> / <a href="/index.html#activites">Activités</a> / <span style="color:var(--ink);">Anniversaires</span></span>
+    <div class="step-menu-wrap">
+      <button class="step-menu-toggle" onclick="toggleMenu()" aria-haspopup="true" aria-controls="stepMenu">
+        <span class="curstep" id="curStepNum">1</span>
+        <span id="curStepLabel">Créneau</span>
+        <span aria-hidden="true">▾</span>
+      </button>
+      <div class="step-menu" id="stepMenu" role="menu">
+        <button class="step-menu-item active" data-step="1" onclick="tryGoTo(1)"><span class="num">1</span><span class="lbl">Créneau<small>Date, horaire, emplacement</small></span></button>
+        <button class="step-menu-item disabled" data-step="2" onclick="tryGoTo(2)"><span class="num">2</span><span class="lbl">Informations<small>Enfant, invités, table</small></span></button>
+        <button class="step-menu-item disabled" data-step="3" onclick="tryGoTo(3)"><span class="num">3</span><span class="lbl">Suppléments<small>Gâteau, bonbons, pinata…</small></span></button>
+        <button class="step-menu-item disabled" data-step="4" onclick="tryGoTo(4)"><span class="num">4</span><span class="lbl">Récapitulatif<small>Vérifier et confirmer</small></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="booking-main" id="top">
+  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25">
+    <div class="progress-bar-fill" id="progressFill"></div>
+  </div>
+
+  <!-- STEP 1 : CRENEAU -->
+  <section class="step-panel active" id="panel-1">
+    <span class="step-eyebrow">Étape 1 / 4</span>
+    <h1 style="font-size:clamp(24px,4vw,32px);margin-bottom:6px;font-family:var(--display);">Choisissez le créneau</h1>
+    <p class="step-sub">Sélectionnez la date, l'horaire et l'emplacement réservé à votre groupe.</p>
+
+    <div class="b-card">
+      <div class="field">
+        <label for="partyDate">Date de l'anniversaire</label>
+        <input type="date" id="partyDate" required>
+        <span class="field-error" id="dateWarning">Le parc est fermé ce jour-là — merci de choisir une autre date.</span>
+      </div>
+
+      <div class="field">
+        <label>Horaire</label>
+        <div class="choice-grid">
+          <button type="button" class="choice-card" data-slot="matin" onclick="selectSlot('matin')">
+            <h4>🌤️ Matin</h4>
+            <span>9h00 – 13h00</span>
+          </button>
+          <button type="button" class="choice-card" data-slot="aprem" onclick="selectSlot('aprem')">
+            <h4>🌇 Après-midi</h4>
+            <span>14h00 – 18h00</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Emplacement (4 disponibles)</label>
+        <div class="plan">
+          <div class="plan-top">
+            <button type="button" class="spot" data-spot="haut1" onclick="selectSpot('haut1')"><span class="ico">🎈</span><h5>Haut 1</h5><small>Table 8 pers.</small></button>
+            <button type="button" class="spot" data-spot="haut2" onclick="selectSpot('haut2')"><span class="ico">🎈</span><h5>Haut 2</h5><small>Table 8 pers.</small></button>
+            <button type="button" class="spot" data-spot="haut3" onclick="selectSpot('haut3')"><span class="ico">🎈</span><h5>Haut 3</h5><small>Table 8 pers.</small></button>
+          </div>
+          <div class="plan-bottom">
+            <button type="button" class="spot" data-spot="bas" onclick="selectSpot('bas')"><span class="ico">🎉</span><h5>Emplacement Bas</h5><small>Grande table, 12 pers.</small></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <span></span>
+      <button class="btn btn-primary" id="next1" disabled onclick="goTo(2)">Continuer →</button>
+    </div>
+  </section>
+
+  <!-- STEP 2 : INFORMATIONS -->
+  <section class="step-panel" id="panel-2">
+    <span class="step-eyebrow">Étape 2 / 4</span>
+    <h2>Informations</h2>
+    <p class="step-sub">Quelques détails pour préparer au mieux la fête.</p>
+
+    <div class="b-card">
+      <div class="field">
+        <label for="childName">Nom de l'enfant qui fête son anniversaire</label>
+        <input type="text" id="childName" placeholder="Prénom et nom" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="address">Adresse</label>
+        <input type="text" id="address" placeholder="Rue, numéro, NPA, localité" autocomplete="street-address">
+      </div>
+      <div class="field">
+        <label for="parentEmail">E-mail d'un parent</label>
+        <input type="email" id="parentEmail" placeholder="prenom.nom@exemple.ch" autocomplete="email">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="nbChildren">Nombre d'enfants invités</label>
+          <input type="number" id="nbChildren" min="0" value="0">
+        </div>
+        <div class="field">
+          <label for="nbAdults">Nombre d'adultes invités</label>
+          <input type="number" id="nbAdults" min="0" value="0">
+        </div>
+      </div>
+      <div class="field">
+        <label>Table</label>
+        <div class="radio-group">
+          <button type="button" class="radio-pill" data-table="neutre" onclick="selectTable('neutre')">Table neutre</button>
+          <button type="button" class="radio-pill" data-table="preparee" onclick="selectTable('preparee')">Table préparée (déco incluse)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn btn-ghost" onclick="goTo(1)">← Retour</button>
+      <button class="btn btn-primary" id="next2" disabled onclick="goTo(3)">Continuer →</button>
+    </div>
+  </section>
+
+  <!-- STEP 3 : SUPPLEMENTS -->
+  <section class="step-panel" id="panel-3">
+    <span class="step-eyebrow">Étape 3 / 4</span>
+    <h2>Suppléments</h2>
+    <p class="step-sub">Envie de compléter la fête ? Ajoutez ce qu'il vous faut, ou passez directement au récapitulatif.</p>
+
+    <div class="supp-card">
+      <div class="supp-icon" style="background:#FFE7E3;">🎂</div>
+      <div class="supp-body">
+        <h4>Gâteau d'anniversaire</h4>
+        <p>Chocolat ou vanille, pour environ 12 parts. Prix indicatif.</p>
+        <span class="supp-price">CHF 45.- / pièce</span>
+      </div>
+      <div class="supp-ctrl">
+        <div class="b-qty"><button type="button" onclick="changeSupp('gateau',-1)" aria-label="Retirer un gâteau">−</button><span id="qty-gateau">0</span><button type="button" onclick="changeSupp('gateau',1)" aria-label="Ajouter un gâteau">+</button></div>
+      </div>
+    </div>
+
+    <div class="supp-card">
+      <div class="supp-icon" style="background:#FFF3D6;">🍬</div>
+      <div class="supp-body">
+        <h4>Buffet de bonbons</h4>
+        <p>Assortiment coloré à partager entre les invités. Prix indicatif.</p>
+        <span class="supp-price">CHF 35.- / buffet</span>
+      </div>
+      <div class="supp-ctrl">
+        <div class="b-qty"><button type="button" onclick="changeSupp('bonbons',-1)" aria-label="Retirer un buffet de bonbons">−</button><span id="qty-bonbons">0</span><button type="button" onclick="changeSupp('bonbons',1)" aria-label="Ajouter un buffet de bonbons">+</button></div>
+      </div>
+    </div>
+
+    <div class="supp-card">
+      <div class="supp-icon" style="background:#E8F6FF;">🪅</div>
+      <div class="supp-body">
+        <h4>Pinata</h4>
+        <p>À remplir de surprises, moment fort garanti. Prix indicatif.</p>
+        <span class="supp-price">CHF 25.- / pièce</span>
+      </div>
+      <div class="supp-ctrl">
+        <div class="b-qty"><button type="button" onclick="changeSupp('pinata',-1)" aria-label="Retirer une pinata">−</button><span id="qty-pinata">0</span><button type="button" onclick="changeSupp('pinata',1)" aria-label="Ajouter une pinata">+</button></div>
+      </div>
+    </div>
+
+    <div class="supp-card">
+      <div class="supp-icon" style="background:#E6F7EC;">🍫</div>
+      <div class="supp-body">
+        <h4>Fondue au chocolat</h4>
+        <p>Servie avec fruits et guimauves, tarif par enfant invité. Prix indicatif.</p>
+        <span class="supp-price">CHF 6.- / enfant</span>
+      </div>
+      <div class="supp-ctrl">
+        <div class="b-qty"><button type="button" onclick="changeSupp('fondue',-1)" aria-label="Retirer une portion de fondue">−</button><span id="qty-fondue">0</span><button type="button" onclick="changeSupp('fondue',1)" aria-label="Ajouter une portion de fondue">+</button></div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn btn-ghost" onclick="goTo(2)">← Retour</button>
+      <button class="btn btn-primary" onclick="goTo(4)">Voir le récapitulatif →</button>
+    </div>
+  </section>
+
+  <!-- STEP 4 : RECAP -->
+  <section class="step-panel" id="panel-4">
+    <span class="step-eyebrow">Étape 4 / 4</span>
+    <h2>Récapitulatif</h2>
+    <p class="step-sub">Vérifiez les informations avant de confirmer la réservation.</p>
+
+    <div class="b-card" id="recapCard"></div>
+    <p class="recap-note">Ceci est une démonstration : en production, cette étape enverrait la demande à Urba Kids et un e-mail de confirmation au parent, avec paiement de l'acompte en ligne (TWINT, carte ou PostFinance).</p>
+
+    <div class="nav-buttons">
+      <button class="btn btn-ghost" onclick="goTo(3)">← Modifier</button>
+      <button class="btn btn-primary" onclick="submitReservation()">Confirmer la réservation</button>
+    </div>
+
+    <div class="success-box" id="successBox" style="display:none;">
+      <div class="emoji">🎉</div>
+      <h2>Réservation enregistrée !</h2>
+      <p>Ceci est une démonstration : en production, cette étape enverrait la demande à Urba Kids et un e-mail de confirmation au parent, avec paiement de l'acompte en ligne.</p>
+      <a href="/index.html" class="btn btn-outline">Retour à l'accueil</a>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/anniversaire.js" defer></script>
+</body>
+</html>

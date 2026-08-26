@@ -1,0 +1,14 @@
+{
+  "name": "Urba Kids — Centre de jeux couvert à Orbe",
+  "short_name": "Urba Kids",
+  "description": "1300 m² de jeux couverts pour les 0-12 ans à Orbe (Vaud). Billets et réservations d'anniversaire en ligne.",
+  "start_url": "/index.html",
+  "id": "/index.html",
+  "display": "standalone",
+  "background_color": "#FFFBF3",
+  "theme_color": "#16233F",
+  "lang": "fr-CH",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

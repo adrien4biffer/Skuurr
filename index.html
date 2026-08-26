@@ -1,31 +1,485 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Pizzeria Marsiglia à Orbe — pizzas napolitaines et spécialités siciliennes cuites au feu de bois. Réservez votre table en ligne, à emporter ou en livraison."
-    />
-    <meta name="theme-color" content="#7a1f1f" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <title>Pizzeria Marsiglia — Pizzas & spécialités siciliennes à Orbe</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Urba Kids — Centre de jeux couvert & labyrinthe de maïs à Orbe (Vaud)</title>
+<meta name="description" content="Urba Kids à Orbe : 1300 m² de jeux couverts pour les 0-12 ans (châteaux gonflables, trampolines, labyrinthe de maïs Urba Byrinthe). Billets moins chers en ligne. Réservez en 2 minutes.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.urba-kids.ch/">
+<link rel="alternate" hreflang="fr-ch" href="https://www.urba-kids.ch/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Urba Kids">
+<meta property="og:title" content="Urba Kids — Le plus grand centre de jeux couvert du Nord Vaudois">
+<meta property="og:description" content="1300 m² de jeux pour les 0-12 ans à Orbe. Châteaux gonflables, trampolines, labyrinthe de maïs. Réservez vos billets en ligne, moins chers qu'au guichet.">
+<meta property="og:url" content="https://www.urba-kids.ch/">
+<meta property="og:image" content="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-49-1024x683.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="683">
+<meta property="og:locale" content="fr_CH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Urba Kids — Centre de jeux couvert & labyrinthe de maïs à Orbe">
+<meta name="twitter:description" content="1300 m² de jeux pour les 0-12 ans. Billets en ligne moins chers qu'au guichet.">
+<meta name="twitter:image" content="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-49-1024x683.jpg">
+<meta name="theme-color" content="#16233F">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://www.urba-kids.ch/wp-content/uploads/2021/04/chateau_gonflable.png" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AmusementPark",
+  "name": "Urba Kids",
+  "alternateName": "Urba Kids Orbe",
+  "description": "Centre de jeux couvert de 1300 m² pour les enfants de 0 à 12 ans à Orbe (Vaud) : châteaux gonflables, trampolines, voitures électriques et labyrinthe de maïs saisonnier Urba Byrinthe.",
+  "image": [
+    "https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-49-1024x683.jpg",
+    "https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-03-1024x683.jpeg",
+    "https://www.urba-kids.ch/wp-content/uploads/2020/04/URBA_37_KIDS-1024x682.jpg"
+  ],
+  "@id": "https://www.urba-kids.ch/#business",
+  "url": "https://www.urba-kids.ch/",
+  "telephone": "+41244413133",
+  "priceRange": "CHF 6.- – CHF 250.-",
+  "currenciesAccepted": "CHF",
+  "paymentAccepted": "Cash, Credit Card, TWINT, PostFinance",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Chemin de Passon 2",
+    "addressLocality": "Orbe",
+    "postalCode": "1350",
+    "addressRegion": "VD",
+    "addressCountry": "CH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 46.71819,
+    "longitude": 6.54041
+  },
+  "hasMap": "https://maps.google.com/maps?q=Chemin+de+Passon+2,+1350+Orbe,+Suisse",
+  "sameAs": [
+    "https://www.facebook.com/p/Urba-Kids-100063649294566/"
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday"], "opens": "13:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "09:00", "closes": "18:00" }
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.urba-kids.ch/tarifs.html",
+      "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+    },
+    "result": { "@type": "Reservation", "name": "Billet Urba Kids" }
+  }
+}
+</script>
+<!--
+  Avis Google : n'activer le bloc aggregateRating ci-dessous qu'une fois connecté
+  à de vraies données (API Google Places ou export manuel vérifié). Publier une
+  note fictive est contraire aux consignes Google sur les données structurées.
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AmusementPark",
+  "@id": "https://www.urba-kids.ch/#business",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "REMPLACER_PAR_NOTE_REELLE", "reviewCount": "REMPLACER_PAR_NB_AVIS_REEL" }
+}
+</script>
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pourquoi réserver mon billet en ligne plutôt que sur place ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Chaque billet acheté en ligne coûte moins cher que le tarif guichet (de CHF 2.- à CHF 10.- selon l'offre), et vous évitez la file d'attente à l'arrivée." }
+    },
+    {
+      "@type": "Question",
+      "name": "Le pique-nique est-il autorisé ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, avec le concept « Play & Pique-nique » vous pouvez apporter votre repas. Une petite épicerie propose aussi planchettes, sandwichs et baguettes pizza sur place." }
+    },
+    {
+      "@type": "Question",
+      "name": "À partir de quel âge peut-on venir ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Le parc accueille les enfants de 1 à 12 ans, avec un espace dédié et sécurisé pour les 1–4 ans, séparé de la zone des plus grands." }
+    },
+    {
+      "@type": "Question",
+      "name": "Y a-t-il un parking ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, un parking gratuit est disponible directement sur place, Chemin de Passon 2 à Orbe." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#top" class="skip-link">Aller au contenu principal</a>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Gestion des cookies">
+  <p>Nous utilisons des cookies pour mesurer l'audience du site et améliorer votre expérience. Consultez notre <a href="/confidentialite.html">politique de confidentialité</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-primary btn-sm" data-cookie-accept>Accepter</button>
+    <button class="btn btn-ghost btn-sm" data-cookie-decline>Refuser</button>
+  </div>
+</div>
+
+<!-- MENU HUB : page d'accueil > Menu > choix de rubrique > rubrique -->
+<div id="menuHub" class="menu-hub" aria-hidden="true">
+  <div class="menu-hub-backdrop" data-menu-close></div>
+  <nav class="menu-hub-panel" aria-label="Menu du site">
+    <div class="menu-hub-top">
+      <span class="logo" style="color:#fff;"><span class="dot"></span>Urba Kids</span>
+      <button class="menu-close" data-menu-close aria-label="Fermer le menu">&times;</button>
+    </div>
+    <div class="menu-hub-head">
+      <span class="eyebrow" style="color:var(--coral);justify-content:flex-start;">Menu</span>
+      <h2>Où souhaitez-vous aller ?</h2>
+      <p style="color:#5a6580;">Choisissez une rubrique du site.</p>
+    </div>
+    <div class="menu-hub-grid">
+      <a class="hub-tile" href="#top" data-menu-close>
+        <span class="hub-ico" style="background:#6EC6EA;">🏠</span>
+        <span class="hub-txt"><strong>Accueil</strong><small>Revenir en haut de page</small></span>
+      </a>
+      <a class="hub-tile" href="#activites" data-menu-close>
+        <span class="hub-ico" style="background:#FF8F87;">🏰</span>
+        <span class="hub-txt"><strong>Activités</strong><small>Centre de jeux, Urba Byrinthe…</small></span>
+      </a>
+      <a class="hub-tile" href="#galerie" data-menu-close>
+        <span class="hub-ico" style="background:#B9A8EA;">📸</span>
+        <span class="hub-txt"><strong>Galerie</strong><small>Le parc en images</small></span>
+      </a>
+      <a class="hub-tile" href="#avis" data-menu-close>
+        <span class="hub-ico" style="background:#FFD166;">⭐</span>
+        <span class="hub-txt"><strong>Avis Google</strong><small>Ce que disent les familles</small></span>
+      </a>
+      <a class="hub-tile" href="/tarifs.html">
+        <span class="hub-ico" style="background:#4FC98A;">🎟️</span>
+        <span class="hub-txt"><strong>Tarifs & billets</strong><small>Billetterie en ligne, moins cher</small></span>
+      </a>
+      <a class="hub-tile" href="/anniversaire.html">
+        <span class="hub-ico" style="background:#FF8F87;">🎂</span>
+        <span class="hub-txt"><strong>Anniversaires</strong><small>Réserver une fête pas à pas</small></span>
+      </a>
+      <a class="hub-tile" href="/reglement.html">
+        <span class="hub-ico" style="background:#B9A8EA;">📋</span>
+        <span class="hub-txt"><strong>Règlement</strong><small>Consignes du parc</small></span>
+      </a>
+      <a class="hub-tile" href="#horaires" data-menu-close>
+        <span class="hub-ico" style="background:#6EC6EA;">🕒</span>
+        <span class="hub-txt"><strong>Horaires & accès</strong><small>Ouverture, adresse, carte</small></span>
+      </a>
+      <a class="hub-tile" href="#faq" data-menu-close>
+        <span class="hub-ico" style="background:#FFD166;">❓</span>
+        <span class="hub-txt"><strong>FAQ</strong><small>Questions fréquentes</small></span>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#top" class="logo"><span class="dot"></span>Urba Kids</a>
+    <span class="open-status" data-open-status></span>
+    <div class="header-actions">
+      <a href="/tarifs.html" class="btn btn-primary btn-sm">Réserver mon billet</a>
+      <button class="menu-trigger" data-menu-trigger aria-haspopup="true" aria-controls="menuHub">
+        <span class="burger-mini"><span></span><span></span><span></span></span>
+        <span class="trigger-label">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="https://www.urba-kids.ch/wp-content/uploads/2021/04/chateau_gonflable.png" alt="" loading="eager" fetchpriority="high">
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Orbe · Nord Vaudois · 1300 m² couverts</div>
+        <h1>La journée pluvieuse préférée <em>des enfants</em> (et des parents).</h1>
+        <p class="hero-lede">Châteaux gonflables, trampolines, labyrinthe géant et voitures électriques pour les 0 à 12 ans. Ouvert 7j/7, qu'il pleuve ou qu'il vente.</p>
+        <div class="hero-ctas">
+          <a href="/tarifs.html" class="btn btn-primary">Réserver mon billet en ligne</a>
+          <a href="#activites" class="btn btn-outline">Découvrir le parc</a>
+        </div>
+        <div class="rating-badge">
+          <span class="g-icon">G</span>
+          <span class="stars">★★★★★</span>
+          <span>Avis Google — voir les avis récents des familles</span>
+        </div>
+        <div class="rating-badge" style="margin-top:10px;">
+          <span aria-hidden="true">🌽</span>
+          <span data-countdown-to="2026-10-04">Urba Byrinthe : ouvert jusqu'au 4 octobre 2026</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="icon-float f1">🏰 Châteaux gonflables</div>
+        <div class="icon-float f2">🏎️ Voitures électriques</div>
+        <div class="icon-float f3">🌽 Urba Byrinthe</div>
+        <div class="ticket-mini">
+          <b>BILLET E-TICKET</b>
+          ENFANT 2–12 ANS<br>
+          <span style="text-decoration:line-through;color:#9aa3b8;">CHF 14.-</span>
+          <span style="color:var(--grass);font-weight:700;"> CHF 11.-</span><br>
+          − 3.- vs sur place
+        </div>
+      </div>
+    </div>
+    <a href="#activites" class="scroll-cue"><span>Découvrir</span><span class="arrow"></span></a>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trustbar">
+    <div class="wrap">
+      <div class="trust-item"><span class="num" data-count="1300" data-suffix=" m²">0 m²</span> de jeux couverts</div>
+      <div class="trust-item"><span class="num">0–12</span> ans, indoor & outdoor</div>
+      <div class="trust-item"><span class="num">7/7</span> jours, sauf 25 déc.</div>
+      <div class="trust-item"><span class="num">P</span> Parking gratuit sur place</div>
+      <div class="trust-item"><span class="num">−3.-</span> à <span class="num">−10.-</span> sur les billets en ligne</div>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES -->
+  <section id="activites">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">Ce qui vous attend</div>
+        <h2>Un parc, quatre univers de jeu</h2>
+        <p>De la naissance à 12 ans, chaque tranche d'âge a son espace — et les parents ont le leur, avec vue sur tout.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="act-card reveal">
+          <div class="act-icon" style="background:#E8F6FF;">🏰</div>
+          <h3>Centre de jeux</h3>
+          <p>Dès 4 ans : structure géante multi-niveaux, ponts de singe, bains de boules, toboggans, tyrolienne, air-hockey et babyfoot. Espace dédié 1–4 ans avec parcours de trotteurs.</p>
+          <span class="act-tag">Compris dans le billet d'entrée</span>
+        </div>
+        <div class="act-card reveal">
+          <div class="act-icon" style="background:#FFF3D6;">🌽</div>
+          <h3>Urba Byrinthe</h3>
+          <p>Labyrinthe de maïs grandeur nature (juillet–octobre). Résolvez l'enquête de Maëlys en famille sur des parcours de 1 à 3 km, accessibles aux poussettes.</p>
+          <span class="act-tag">Dès CHF 6.- en ligne</span>
+        </div>
+        <div class="act-card reveal">
+          <div class="act-icon" style="background:#FFE7E3;">🎂</div>
+          <h3>Anniversaires</h3>
+          <p>Un espace dédié pour fêter les 4 ans comme les 12 ans, entre deux sessions de jeu, avec goûter et surveillance incluse.</p>
+          <span class="act-tag">Formules sur devis</span>
+          <a href="/anniversaire.html" class="btn btn-dark btn-sm" style="margin-top:8px;align-self:flex-start;">Réserver un anniversaire →</a>
+        </div>
+        <div class="act-card reveal">
+          <div class="act-icon" style="background:#E6F7EC;">🧸</div>
+          <h3>Garderie vacances</h3>
+          <p>Pendant les vacances scolaires (sauf Noël), une équipe spécialisée accueille les enfants dès 5 ans avec tendresse, fun et sourires.</p>
+          <span class="act-tag">Sur réservation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="galerie" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">En images</div>
+        <h2>Le parc vu par nos familles</h2>
+      </div>
+      <div class="gallery-note reveal">
+        📸 Photos reprises directement du site actuel d'Urba Kids (crédit : Muriel Antille / Urba Kids, sauf photo du labyrinthe : KEYSTONE/Laurent Gillieron). Remplaçables à tout moment par de nouveaux visuels. Cliquez sur une photo pour l'agrandir.
+      </div>
+      <div class="gallery-grid reveal">
+        <button type="button" class="g-tile big g1" data-full="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-49-1024x683.jpg" data-caption="Le grand toboggan">
+          <img src="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-49-1024x683.jpg" width="1024" height="683" alt="Enfants jouant sur la structure de jeux géante d'Urba Kids" loading="lazy" decoding="async">
+          <span>Le grand toboggan</span>
+        </button>
+        <button type="button" class="g-tile g2" data-full="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-03-1024x683.jpeg" data-caption="Voitures électriques">
+          <img src="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-03-1024x683.jpeg" width="1024" height="683" alt="Voitures électriques pour enfants à Urba Kids" loading="lazy" decoding="async">
+          <span>Voitures électriques</span>
+        </button>
+        <button type="button" class="g-tile g3" data-full="https://www.urba-kids.ch/wp-content/uploads/2020/04/URBA_37_KIDS-1024x682.jpg" data-caption="Bain de boules">
+          <img src="https://www.urba-kids.ch/wp-content/uploads/2020/04/URBA_37_KIDS-1024x682.jpg" width="1024" height="682" alt="Bain de boules à Urba Kids" loading="lazy" decoding="async">
+          <span>Bain de boules</span>
+        </button>
+        <button type="button" class="g-tile g4" data-full="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-15-1024x683.jpg" data-caption="Terrasse extérieure">
+          <img src="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-15-1024x683.jpg" width="1024" height="683" alt="Terrasse et place de jeux extérieure d'Urba Kids" loading="lazy" decoding="async">
+          <span>Terrasse extérieure</span>
+        </button>
+        <button type="button" class="g-tile g5" data-full="https://www.urba-kids.ch/wp-content/uploads/2020/04/389048388_socialmedia-1-1024x682.jpg" data-caption="Urba Byrinthe">
+          <img src="https://www.urba-kids.ch/wp-content/uploads/2020/04/389048388_socialmedia-1-1024x682.jpg" width="1024" height="682" alt="Enfants explorant le labyrinthe de maïs Urba Byrinthe" loading="lazy" decoding="async">
+          <span>Urba Byrinthe</span>
+        </button>
+        <button type="button" class="g-tile big g6" data-full="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-01-1024x683.jpg" data-caption="Espace 1–4 ans">
+          <img src="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-01-1024x683.jpg" width="1024" height="683" alt="Espace de jeux dédié aux 1-4 ans à Urba Kids" loading="lazy" decoding="async">
+          <span>Espace 1–4 ans</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="avis">
+    <div class="wrap reviews-section reveal">
+      <div class="section-head">
+        <div class="reviews-head-badge">
+          <span class="stars" style="font-size:22px;">★★★★★</span>
+        </div>
+        <div class="eyebrow" style="justify-content:center;color:var(--coral);">Avis Google</div>
+        <h2>Ce que disent les familles</h2>
+        <p>Emplacement prêt pour l'intégration du widget Google Reviews (API Google Places) — les cartes ci-dessous illustrent la mise en page avec des avis d'exemple.</p>
+      </div>
+      <div class="review-cards">
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>Un immense espace couvert, parfait pour occuper les enfants les jours de pluie. Le personnel est attentif et bienveillant.</p>
+          <div class="who"><div class="avatar">FL</div><div><strong>Famille L.</strong><small>Avis exemple — à remplacer</small></div></div>
+        </div>
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>Nos enfants ne veulent plus repartir ! Beaucoup de jeux différents pour tous les âges, et un vrai coin tranquille pour les parents.</p>
+          <div class="who"><div class="avatar">MK</div><div><strong>M. K.</strong><small>Avis exemple — à remplacer</small></div></div>
+        </div>
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>Le labyrinthe de maïs en été est une super activité bonus, différente du centre de jeux classique. On y retourne chaque année.</p>
+          <div class="who"><div class="avatar">SD</div><div><strong>S. D.</strong><small>Avis exemple — à remplacer</small></div></div>
+        </div>
+      </div>
+      <div class="reviews-cta"><a href="https://www.google.com/search?q=Urba+Kids+Orbe+avis" target="_blank" rel="noopener">Voir tous les avis sur Google →</a></div>
+    </div>
+  </section>
+
+  <!-- HOURS + ACCESS -->
+  <section id="horaires">
+    <div class="wrap hours-layout">
+      <div class="hours-card reveal">
+        <div class="eyebrow">Horaires</div>
+        <h2 style="font-size:26px;">Ouvert 7j/7</h2>
+        <p class="open-status" data-open-status style="margin-bottom:10px;"></p>
+        <table class="hours-table">
+          <tr data-day="1"><td>Lundi – Mardi (hors vacances)</td><td>13h – 18h</td></tr>
+          <tr data-day="3"><td>Mercredi – Dimanche</td><td>9h – 18h</td></tr>
+          <tr><td>Vacances scolaires VD & jours fériés</td><td>9h – 18h</td></tr>
+          <tr><td>24 et 31 décembre</td><td>9h – 17h</td></tr>
+          <tr><td>25 décembre</td><td>Fermé</td></tr>
+        </table>
+        <p style="margin-top:16px;font-size:14px;color:#5a6580;">La durée de visite est illimitée sur la journée. Chemin de Passon 2, 1350 Orbe — Tél. <a href="tel:+41244413133" style="text-decoration:underline;">024 441 31 33</a>.</p>
+        <a href="/tarifs.html" class="btn btn-dark btn-sm">Réserver mon créneau</a>
+      </div>
+      <div class="map-embed reveal">
+        <iframe src="https://maps.google.com/maps?q=Chemin%20de%20Passon%202%2C%201350%20Orbe%2C%20Suisse&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation Urba Kids, Orbe"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">Questions fréquentes</div>
+        <h2>Tout savoir avant de venir</h2>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item open">
+          <button class="faq-q" aria-expanded="true">Pourquoi réserver mon billet en ligne plutôt que sur place ? <span class="plus" aria-hidden="true">+</span></button>
+          <div class="faq-a"><p>Chaque billet acheté en ligne coûte moins cher que le tarif guichet (de CHF 2.- à CHF 10.- selon l'offre), et vous évitez la file d'attente à l'arrivée.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Le pique-nique est-il autorisé ? <span class="plus" aria-hidden="true">+</span></button>
+          <div class="faq-a"><p>Oui, avec le concept « Play & Pique-nique » vous pouvez apporter votre repas. Une petite épicerie propose aussi planchettes, sandwichs et baguettes pizza sur place.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">À partir de quel âge peut-on venir ? <span class="plus" aria-hidden="true">+</span></button>
+          <div class="faq-a"><p>Le parc accueille les enfants de 1 à 12 ans, avec un espace dédié et sécurisé pour les 1–4 ans, séparé de la zone des plus grands.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Y a-t-il un parking ? <span class="plus" aria-hidden="true">+</span></button>
+          <div class="faq-a"><p>Oui, un parking gratuit est disponible directement sur place, Chemin de Passon 2 à Orbe.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="wrap final-cta reveal">
+      <h2>On vous garde une place ?</h2>
+      <p>Réservez vos billets en ligne dès maintenant et économisez jusqu'à CHF 10.- par rapport au tarif sur place.</p>
+      <a href="/tarifs.html" class="btn btn-dark">Réserver mon billet</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-logo">Urba Kids</div>
+        <p style="font-size:14px;max-width:260px;">Chemin de Passon 2, 1350 Orbe — le centre de jeux couvert du Nord Vaudois pour les 0 à 12 ans.</p>
+        <form class="newsletter-form" aria-label="Inscription newsletter">
+          <label for="newsletterEmail" style="position:absolute;left:-9999px;">Adresse e-mail</label>
+          <input type="email" id="newsletterEmail" placeholder="Votre e-mail" required>
+          <button type="submit" class="btn btn-dark btn-sm">S'inscrire</button>
+        </form>
+        <p class="newsletter-note">Recevez nos offres et actualités (démo — pas d'envoi réel).</p>
+      </div>
+      <div>
+        <h4>Le parc</h4>
+        <a href="#activites">Activités</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#avis">Avis Google</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Pratique</h4>
+        <a href="/tarifs.html">Tarifs & billets</a>
+        <a href="#horaires">Horaires & accès</a>
+        <a href="/reglement.html">Règlement</a>
+        <a href="tel:+41244413133">024 441 31 33</a>
+      </div>
+      <div>
+        <h4>Suivez-nous</h4>
+        <a href="https://www.facebook.com/p/Urba-Kids-100063649294566/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.google.com/search?q=Urba+Kids+Orbe" target="_blank" rel="noopener">Fiche Google</a>
+        <a href="/mentions-legales.html">Mentions légales</a>
+        <a href="/confidentialite.html">Confidentialité</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Urba Kids — Orbe, Suisse</span>
+      <span>Maquette de refonte — contenu à valider avant mise en ligne</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <span class="open-status" data-open-status style="display:none;"></span>
+  <a href="/tarifs.html" class="btn btn-primary">Réserver mon billet →</a>
+</div>
+
+<div class="lightbox" id="galleryLightbox" aria-hidden="true">
+  <div class="lightbox-backdrop" data-lightbox-close></div>
+  <div class="lightbox-body">
+    <button class="lightbox-close" data-lightbox-close aria-label="Fermer">&times;</button>
+    <img src="" alt="">
+    <p class="lightbox-caption"></p>
+  </div>
+</div>
+
+<script src="/assets/js/site.js" defer></script>
+</body>
 </html>

@@ -1,43 +1,97 @@
-# Pizzeria Marsiglia — Site vitrine & réservation
+# Urba Kids — Site vitrine, billetterie & réservation d'anniversaire
 
-Site vitrine dynamique pour une pizzeria (pizzas napolitaines & spécialités
-siciliennes), avec un système de réservation en ligne.
+Site vitrine dynamique pour **Urba Kids**, centre de jeux couvert (1300 m²)
+pour les 0-12 ans à Orbe (VD), avec labyrinthe de maïs saisonnier
+« Urba Byrinthe ». Le site inclut une billetterie en ligne avec panier et
+tunnel de paiement simulé, ainsi qu'un assistant de réservation
+d'anniversaire en 4 étapes.
 
-Construit avec **React + TypeScript + Vite** et **Tailwind CSS v4**.
+Construit en **HTML / CSS / JavaScript statique**, sans framework ni étape
+de build : chaque page est directement crawlable et rapide à charger, ce qui
+est le facteur SEO le plus déterminant pour un commerce local. Toute la
+logique interactive (panier, paiement simulé, assistant de réservation,
+horaires en direct) tourne côté client en JavaScript natif.
 
-## Fonctionnalités
+## Structure
 
-- Page unique avec sections : accueil, histoire, menu, réservation, contact
-- Menu filtrable par catégorie (pizzas, spécialités siciliennes, salades, desserts, boissons)
-- Système de réservation :
-  - créneaux horaires générés dynamiquement selon les horaires d'ouverture réels
-  - validation complète du formulaire (email, téléphone, date, nombre de personnes)
-  - blocage des jours fermés et des créneaux passés
-  - confirmation avec numéro de référence, persistée en `localStorage`
-- Carte interactive (Google Maps) et coordonnées de contact
-- Animations au scroll, header dynamique, design responsive (mobile → desktop)
+```
+index.html              Accueil (hero, activités, galerie, avis, horaires, FAQ)
+tarifs.html              Billetterie en ligne (panier + tunnel de paiement simulé)
+anniversaire.html         Assistant de réservation d'anniversaire (4 étapes)
+reglement.html            Règlement du parc
+mentions-legales.html     Mentions légales (à valider juridiquement)
+confidentialite.html      Politique de confidentialité / cookies (nLPD)
+404.html                  Page d'erreur personnalisée
+robots.txt / sitemap.xml  Indexation
+site.webmanifest          Icône / PWA légère
+favicon.svg               Favicon vectoriel
+
+assets/css/base.css        Styles communs à toutes les pages
+assets/css/booking.css     Styles spécifiques à l'assistant d'anniversaire
+assets/js/site.js          Header, menu, FAQ, reveal, cookies, badge horaires
+assets/js/tarifs.js        Panier (persistant), checkout simulé
+assets/js/anniversaire.js  Logique de l'assistant de réservation
+```
 
 ## Démarrer en local
 
-```bash
-npm install
-npm run dev
-```
-
-## Build de production
+Aucune installation n'est nécessaire — servez simplement le dossier :
 
 ```bash
-npm run build
-npm run preview
+python3 -m http.server 8000
+# puis ouvrez http://localhost:8000/index.html
 ```
 
-## Personnaliser
+## Ce qui a été mis en place pour le SEO
 
-- `src/data/business.ts` — coordonnées, horaires d'ouverture, réseaux sociaux
-- `src/data/menu.ts` — carte des menus et prix
-- `src/index.css` — palette de couleurs et polices (thème Tailwind)
+- Balises `<title>` et `<meta description>` uniques et optimisées par page,
+  URL canonique, Open Graph et Twitter Card sur chaque page.
+- Données structurées JSON-LD : `AmusementPark` (avec géolocalisation,
+  horaires, action de réservation), `FAQPage`, `BreadcrumbList` sur les
+  pages secondaires, `Product`/`Offer` pour chaque billet, `Service` pour
+  la formule anniversaire.
+- `robots.txt` + `sitemap.xml` déclarant toutes les pages indexables.
+- Un seul `<h1>` par page, hiérarchie de titres cohérente, `alt` sur toutes
+  les images, dimensions déclarées pour limiter les décalages de mise en
+  page (CLS).
+- CSS et JS mutualisés dans `/assets` (mis en cache par le navigateur dès
+  la 2ᵉ page visitée) plutôt que dupliqués inline sur chaque page.
+- Lien d'évitement (« skip link »), attributs ARIA sur les composants
+  interactifs (accordéon FAQ, étapes du menu, méthodes de paiement) :
+  l'accessibilité est aussi un signal de qualité pour les moteurs.
+- Pages légales (mentions légales, confidentialité) : signal de confiance
+  attendu par les moteurs de recherche pour un commerce réel.
 
-> Les informations (adresse, téléphone, horaires) sont basées sur la
-> Pizzeria Marsiglia à Orbe (VD). Le menu détaillé et les horaires complets
-> n'ayant pas pu être récupérés automatiquement, ils sont reconstitués de
-> façon réaliste — à vérifier et ajuster avant mise en production.
+## Ce qui rend le site plus « dynamique »
+
+- **Badge horaires en direct** : calcule « Ouvert maintenant » / « Fermé »
+  depuis les vraies plages horaires (visible dans le header, la section
+  horaires et la barre CTA mobile).
+- **Panier persistant** (`localStorage`) sur la billetterie : le visiteur
+  ne perd pas sa sélection en rechargeant la page.
+- **Validation de dates réelle** : impossible de sélectionner une date
+  passée ou un jour de fermeture (25 décembre) sur les formulaires de
+  réservation, avec message d'erreur explicite.
+- **Compte à rebours saisonnier** pour Urba Byrinthe (nombre de jours
+  restants avant la fermeture du labyrinthe).
+- **Lightbox galerie**, **CTA sticky mobile**, **bandeau de consentement
+  cookies** (charge Google Analytics uniquement après acceptation).
+- **Formulaire newsletter** en pied de page (démo, prêt à connecter à un
+  outil d'emailing).
+
+## Avant la mise en production
+
+- [ ] Remplacer les données de l'entreprise dans `mentions-legales.html`
+      (raison sociale exacte, n° IDE, hébergeur) et faire valider la page
+      confidentialité par un conseil juridique.
+- [ ] Connecter un vrai prestataire de paiement suisse (Datatrans, Wallee,
+      Stripe…) à la place de la simulation dans `assets/js/tarifs.js`.
+- [ ] Brancher le widget Google Reviews (API Google Places) à la place des
+      avis d'exemple, puis activer le bloc `aggregateRating` commenté dans
+      `index.html` avec les vraies valeurs (jamais de note fictive).
+- [ ] Renseigner `window.URBA_KIDS_GA_ID` avec un identifiant Google
+      Analytics 4 réel pour activer la mesure d'audience.
+- [ ] Vérifier les coordonnées GPS exactes du parc dans le JSON-LD
+      (`index.html`) via Google Maps.
+- [ ] Remplacer/optimiser les images (formats WebP/AVIF, CDN) si elles ne
+      sont plus servies depuis `urba-kids.ch`.

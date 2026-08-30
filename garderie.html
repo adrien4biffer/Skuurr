@@ -3,21 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tarifs & billetterie en ligne — Urba Kids Orbe</title>
-<meta name="description" content="Achetez vos billets Urba Kids en ligne moins cher qu'au guichet : entrée, abonnement 10 entrées, Urba Byrinthe et billet combi. Paiement sécurisé TWINT, carte ou PostFinance.">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://www.urba-kids.ch/tarifs.html">
+<title>Garderie vacances — Urba Kids Orbe</title>
+<meta name="description" content="Réservez une place à la garderie vacances Urba Kids à Orbe : accueil des enfants dès 5 ans pendant les vacances scolaires vaudoises (hors Noël), CHF 49.- par jour.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.urba-kids.ch/garderie.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Urba Kids">
-<meta property="og:title" content="Tarifs & billetterie en ligne — Urba Kids Orbe">
-<meta property="og:description" content="Billets moins chers en ligne qu'au guichet : entrée, abonnement 10 entrées, Urba Byrinthe, billet combi. Paiement TWINT, carte ou PostFinance.">
-<meta property="og:url" content="https://www.urba-kids.ch/tarifs.html">
-<meta property="og:image" content="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-49-1024x683.jpg">
+<meta property="og:title" content="Garderie vacances — Urba Kids Orbe">
+<meta property="og:description" content="Accueil des enfants dès 5 ans pendant les vacances scolaires vaudoises (hors Noël). Réservez vos jours en ligne, CHF 49.- par jour.">
+<meta property="og:url" content="https://www.urba-kids.ch/garderie.html">
+<meta property="og:image" content="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-01-1024x683.jpg">
 <meta property="og:locale" content="fr_CH">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tarifs & billetterie en ligne — Urba Kids Orbe">
-<meta name="twitter:description" content="Billets moins chers en ligne qu'au guichet. Paiement TWINT, carte ou PostFinance.">
-<meta name="twitter:image" content="https://www.urba-kids.ch/wp-content/uploads/2021/04/urba-kids-49-1024x683.jpg">
+<meta name="twitter:title" content="Garderie vacances — Urba Kids Orbe">
+<meta name="twitter:description" content="Réservez une place à la garderie vacances, dès 5 ans, pendant les vacances scolaires vaudoises (hors Noël).">
 <meta name="theme-color" content="#16233F">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="manifest" href="/site.webmanifest">
@@ -25,6 +24,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/booking.css">
+<style>
+  .day-period{margin-bottom:22px;}
+  .day-period:last-child{margin-bottom:0;}
+  .day-period h4{font-size:13px;margin-bottom:10px;color:var(--sky-deep);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+  .day-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .day-pill{border:2px solid var(--line);border-radius:100px;padding:9px 16px;background:#fff;font-family:var(--body);font-size:13.5px;font-weight:600;cursor:pointer;color:var(--ink);}
+  .day-pill:hover{border-color:var(--sky);}
+  .day-pill.selected{border-color:var(--coral);background:var(--paper);}
+  .day-pill:focus-visible{outline:3px solid var(--sky-deep);outline-offset:2px;}
+  .garderie-note{background:var(--tint-blue);border-radius:14px;padding:14px 16px;font-size:13.5px;color:#3a4763;margin-bottom:22px;}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,36 +44,19 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.urba-kids.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Tarifs & billets", "item": "https://www.urba-kids.ch/tarifs.html" }
+        { "@type": "ListItem", "position": 2, "name": "Garderie vacances", "item": "https://www.urba-kids.ch/garderie.html" }
       ]
     },
     {
-      "@type": "Product",
-      "name": "Entrée Urba Kids — Enfant 2 à 12 ans",
-      "description": "Accès illimité au centre de jeux couvert + 3 jetons offerts.",
-      "brand": { "@type": "Brand", "name": "Urba Kids" },
-      "offers": { "@type": "Offer", "priceCurrency": "CHF", "price": "11", "url": "https://www.urba-kids.ch/tarifs.html", "availability": "https://schema.org/InStock" }
-    },
-    {
-      "@type": "Product",
-      "name": "Abonnement 10 entrées Urba Kids",
-      "description": "10 entrées au centre de jeux, sans limite de temps, transmissibles en famille.",
-      "brand": { "@type": "Brand", "name": "Urba Kids" },
-      "offers": { "@type": "Offer", "priceCurrency": "CHF", "price": "110", "url": "https://www.urba-kids.ch/tarifs.html", "availability": "https://schema.org/InStock" }
-    },
-    {
-      "@type": "Product",
-      "name": "Urba Byrinthe — Labyrinthe de maïs",
-      "description": "Labyrinthe de maïs grandeur nature, adulte et enfant dès 2 ans. Ouvert du 26 juin au 4 octobre 2026.",
-      "brand": { "@type": "Brand", "name": "Urba Kids" },
-      "offers": { "@type": "Offer", "priceCurrency": "CHF", "price": "6", "url": "https://www.urba-kids.ch/tarifs.html", "availability": "https://schema.org/InStock", "availabilityStarts": "2026-06-26", "availabilityEnds": "2026-10-04" }
-    },
-    {
-      "@type": "Product",
-      "name": "Combi Urba Kids + Urba Byrinthe",
-      "description": "Le centre de jeux et le labyrinthe de maïs réunis en une seule entrée, enfant 2 à 12 ans.",
-      "brand": { "@type": "Brand", "name": "Urba Kids" },
-      "offers": { "@type": "Offer", "priceCurrency": "CHF", "price": "13", "url": "https://www.urba-kids.ch/tarifs.html", "availability": "https://schema.org/InStock" }
+      "@type": "Service",
+      "serviceType": "Garderie / accueil parascolaire pendant les vacances",
+      "name": "Garderie vacances Urba Kids",
+      "description": "Accueil encadré des enfants dès 5 ans pendant les vacances scolaires du canton de Vaud (hors vacances de Noël), au centre de jeux Urba Kids à Orbe.",
+      "provider": { "@type": "AmusementPark", "name": "Urba Kids", "@id": "https://www.urba-kids.ch/#business" },
+      "areaServed": { "@type": "City", "name": "Orbe" },
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 5, "suggestedMaxAge": 12 },
+      "offers": { "@type": "Offer", "priceCurrency": "CHF", "price": "49", "description": "Tarif par jour et par enfant" },
+      "url": "https://www.urba-kids.ch/garderie.html"
     }
   ]
 }
@@ -109,17 +103,17 @@
         <span class="hub-ico" style="background:#FFD166;">⭐</span>
         <span class="hub-txt"><strong>Avis Google</strong><small>Ce que disent les familles</small></span>
       </a>
-      <a class="hub-tile" href="#top" data-menu-close style="border:1.5px solid var(--sun);">
+      <a class="hub-tile" href="/tarifs.html">
         <span class="hub-ico" style="background:#4FC98A;">🎟️</span>
-        <span class="hub-txt"><strong>Tarifs & billets</strong><small>Vous y êtes ✓</small></span>
+        <span class="hub-txt"><strong>Tarifs & billets</strong><small>Billetterie en ligne, moins cher</small></span>
       </a>
       <a class="hub-tile" href="/anniversaire.html">
         <span class="hub-ico" style="background:#FF8F87;">🎂</span>
         <span class="hub-txt"><strong>Anniversaires</strong><small>Réserver une fête pas à pas</small></span>
       </a>
-      <a class="hub-tile" href="/garderie.html">
+      <a class="hub-tile" href="#top" data-menu-close style="border:1.5px solid var(--sun);">
         <span class="hub-ico" style="background:#E6F7EC;">🧸</span>
-        <span class="hub-txt"><strong>Garderie vacances</strong><small>Accueil dès 5 ans, sur réservation</small></span>
+        <span class="hub-txt"><strong>Garderie vacances</strong><small>Vous y êtes ✓</small></span>
       </a>
       <a class="hub-tile" href="/reglement.html">
         <span class="hub-ico" style="background:#B9A8EA;">📋</span>
@@ -142,7 +136,7 @@
     <a href="/index.html" class="logo"><span class="dot"></span>Urba Kids</a>
     <span class="open-status" data-open-status></span>
     <div class="header-actions">
-      <a href="#top" class="btn btn-primary btn-sm">Voir les billets</a>
+      <a href="/tarifs.html" class="btn btn-primary btn-sm">Voir les billets</a>
       <button class="menu-trigger" data-menu-trigger aria-haspopup="true" aria-controls="menuHub">
         <span class="burger-mini"><span></span><span></span><span></span></span>
         <span class="trigger-label">Menu</span>
@@ -150,125 +144,74 @@
     </div>
   </div>
 </header>
+
 <main id="top">
-  <!-- PRICING / TICKETS -->
-  <section id="tarifs" style="padding-top:150px;">
+  <section style="padding-top:150px;">
     <div class="wrap">
       <div class="section-head reveal">
-        <div style="font-family:var(--mono);font-size:12px;color:#8a93ab;margin-bottom:14px;">
-          <a href="/index.html" style="color:var(--sky-deep);text-decoration:none;font-weight:700;">Accueil</a> / Tarifs & billets
+        <div class="breadcrumb-nav" style="justify-content:center;margin-bottom:14px;">
+          <a href="/index.html">Accueil</a> / Garderie vacances
         </div>
-        <div class="eyebrow" style="justify-content:center;">Tarifs & billetterie en ligne</div>
-        <h1 style="font-size:clamp(28px,3.4vw,40px);font-family:var(--display);">Achetez vos billets, moins cher qu'au guichet</h1>
-        <p>Chaque billet coché ci-dessous est <strong>déjà au tarif réduit web</strong> — la différence avec le prix sur place est indiquée sur chaque offre. Ajoutez vos billets au panier, le montant économisé s'affiche en temps réel.</p>
+        <div class="eyebrow" style="justify-content:center;">Garderie vacances</div>
+        <h1 style="font-size:clamp(28px,3.4vw,40px);font-family:var(--display);">Réservez une place à la garderie</h1>
+        <p>Pendant les vacances scolaires vaudoises (hors vacances de Noël), notre équipe spécialisée accueille les enfants dès 5 ans avec goûter et surveillance inclus. Choisissez vos jours ci-dessous — CHF 49.- par jour et par enfant.</p>
       </div>
 
       <div class="pricing-layout">
         <div class="reveal">
-          <div class="ticket">
-            <div class="ticket-main">
-              <h2 style="font-size:17px;margin-bottom:4px;">Entrée Urba Kids — Enfant 2 à 12 ans</h2>
-              <p>Accès illimité au centre de jeux + 3 jetons offerts (mini voitures, jeux de table).</p>
-              <div class="price-row">
-                <span class="price-online">CHF 11.-</span>
-                <span class="price-onsite">CHF 14.- sur place</span>
-                <span class="save-badge">−3.- réduction web</span>
+          <div class="b-card">
+            <div class="field-row">
+              <div class="field">
+                <label for="familyName">Nom de famille</label>
+                <input type="text" id="familyName" placeholder="Nom de famille" autocomplete="family-name" required>
+              </div>
+              <div class="field">
+                <label for="childFirstName">Prénom de l'enfant</label>
+                <input type="text" id="childFirstName" placeholder="Prénom" autocomplete="given-name" required>
               </div>
             </div>
-            <div class="ticket-stub">
-              <div class="qty-control" data-item="entree">
-                <button type="button" aria-label="Retirer une entrée">−</button>
-                <span id="qty-entree">0</span>
-                <button type="button" aria-label="Ajouter une entrée">+</button>
+            <div class="field-row">
+              <div class="field">
+                <label for="childAge">Âge de l'enfant</label>
+                <input type="number" id="childAge" min="5" max="12" placeholder="5 à 12 ans" required>
+                <span class="field-hint">Garderie accessible dès 5 ans.</span>
               </div>
-              <small style="font-family:var(--mono);font-size:11px;color:#8a7440;">billets</small>
-            </div>
-          </div>
-
-          <div class="ticket">
-            <div class="ticket-main">
-              <h2 style="font-size:17px;margin-bottom:4px;">Abonnement 10 entrées Urba Kids</h2>
-              <p>10 entrées au centre de jeux, valables sans limite de temps, transmissibles en famille.</p>
-              <div class="price-row">
-                <span class="price-online">CHF 110.-</span>
-                <span class="price-onsite">CHF 120.- sur place</span>
-                <span class="save-badge">−10.- réduction web</span>
+              <div class="field">
+                <label for="pickupTime">Heure à laquelle un parent vient le chercher</label>
+                <select id="pickupTime" required>
+                  <option value="">Sélectionner…</option>
+                  <option>16h00</option>
+                  <option>16h30</option>
+                  <option>17h00</option>
+                  <option>17h30</option>
+                  <option>18h00</option>
+                </select>
               </div>
             </div>
-            <div class="ticket-stub">
-              <div class="qty-control" data-item="abo10">
-                <button type="button" aria-label="Retirer un abonnement">−</button>
-                <span id="qty-abo10">0</span>
-                <button type="button" aria-label="Ajouter un abonnement">+</button>
-              </div>
-              <small style="font-family:var(--mono);font-size:11px;color:#8a7440;">abonnements</small>
+            <div class="field">
+              <label for="emergencyPhone">Numéro de téléphone en cas d'urgence</label>
+              <input type="tel" id="emergencyPhone" placeholder="079 123 45 67" autocomplete="tel" required>
             </div>
           </div>
 
-          <div class="ticket">
-            <div class="ticket-main">
-              <h2 style="font-size:17px;margin-bottom:4px;">Urba Byrinthe — Labyrinthe de maïs</h2>
-              <p>Adulte et enfant dès 2 ans. Ouvert du 26 juin au 4 octobre 2026.</p>
-              <div class="price-row">
-                <span class="price-online">CHF 6.-</span>
-                <span class="price-onsite">CHF 8.- sur place</span>
-                <span class="save-badge">−2.- réduction web</span>
-              </div>
-            </div>
-            <div class="ticket-stub">
-              <div class="qty-control" data-item="labyrinthe">
-                <button type="button" aria-label="Retirer un billet Urba Byrinthe">−</button>
-                <span id="qty-labyrinthe">0</span>
-                <button type="button" aria-label="Ajouter un billet Urba Byrinthe">+</button>
-              </div>
-              <small style="font-family:var(--mono);font-size:11px;color:#8a7440;">billets</small>
-            </div>
+          <div class="b-card">
+            <label style="display:block;font-weight:700;font-size:14px;margin-bottom:12px;">Choisissez le ou les jours de garde souhaités</label>
+            <div class="garderie-note">📅 Seules les dates des vacances scolaires du canton de Vaud sont proposées (source : calendrier officiel de l'État de Vaud), du lundi au vendredi. Les vacances de Noël ne sont pas couvertes par la garderie.</div>
+            <div id="dayGrid"></div>
           </div>
-
-          <div class="ticket">
-            <div class="ticket-main">
-              <h2 style="font-size:17px;margin-bottom:4px;">Combi Urba Kids + Urba Byrinthe</h2>
-              <p>Enfant 2 à 12 ans. Le centre de jeux et le labyrinthe dans une seule entrée.</p>
-              <div class="price-row">
-                <span class="price-online">CHF 13.-</span>
-                <span class="price-onsite">CHF 16.- sur place</span>
-                <span class="save-badge">−3.- réduction web</span>
-              </div>
-            </div>
-            <div class="ticket-stub">
-              <div class="qty-control" data-item="combi">
-                <button type="button" aria-label="Retirer un billet combi">−</button>
-                <span id="qty-combi">0</span>
-                <button type="button" aria-label="Ajouter un billet combi">+</button>
-              </div>
-              <small style="font-family:var(--mono);font-size:11px;color:#8a7440;">billets</small>
-            </div>
-          </div>
-
-          <p class="pricing-fineprint">
-            Gratuit pour les moins de 2 ans et les adultes accompagnants. Écoles et groupes para/périscolaires : CHF 7.- (sur inscription, tarif guichet uniquement).
-            Abonnements 6 mois (CHF 180.-) et 1 an (CHF 250.-) disponibles sur place ou par téléphone au <a href="tel:+41244413133" style="text-decoration:underline;">024 441 31 33</a>.
-          </p>
         </div>
 
         <div class="cart-panel reveal" id="cartPanel">
-          <h3>🎟️ Mon panier</h3>
-          <div class="field">
-            <label for="visitDate">Date de visite</label>
-            <input type="date" id="visitDate" required>
-            <span class="field-error" id="visitDateError">Merci de choisir une date de visite.</span>
-          </div>
+          <h3>🧸 Récapitulatif</h3>
           <div class="cart-lines" id="cartLines">
-            <div class="cart-empty">Aucun billet sélectionné pour le moment.</div>
+            <div class="cart-empty">Aucun jour sélectionné pour le moment.</div>
           </div>
           <div class="cart-total">
-            <span>Total en ligne</span>
+            <span>Total</span>
             <span class="amount" id="cartTotal">CHF 0.-</span>
           </div>
-          <div class="savings-banner" id="savingsBanner" style="display:none;">
-            🎉 Vous économisez <strong id="savingsAmount">CHF 0.-</strong> par rapport au tarif sur place
-          </div>
           <button class="btn btn-primary" id="checkoutBtn" data-checkout-open disabled>Passer au paiement</button>
+          <p class="pricing-fineprint">Places limitées, sur réservation. Un e-mail de confirmation vous sera envoyé après paiement (démonstration).</p>
         </div>
       </div>
     </div>
@@ -282,7 +225,7 @@
 
       <div class="checkout-step active" id="checkoutStepRecap">
         <span class="step-eyebrow">Étape 1 / 2</span>
-        <h3>Récapitulatif de la commande</h3>
+        <h3>Récapitulatif de la réservation</h3>
         <div class="checkout-lines" id="checkoutLines"></div>
         <div class="checkout-savings" id="checkoutSavings"></div>
         <div class="checkout-total-row">
@@ -324,8 +267,8 @@
       <div class="checkout-step" id="checkoutStepSuccess">
         <div style="text-align:center;padding:20px 0;">
           <div style="font-size:48px;margin-bottom:10px;">✅</div>
-          <h3>Paiement confirmé</h3>
-          <p style="color:#4a5670;">Vos e-billets ont été envoyés par e-mail (démonstration). Présentez-les à l'accueil, avec ou sans impression.</p>
+          <h3>Réservation confirmée</h3>
+          <p style="color:#4a5670;">Votre confirmation a été envoyée par e-mail (démonstration). Présentez-vous aux jours réservés avec la carte d'identité de l'enfant.</p>
           <div class="checkout-total-row" style="justify-content:center;gap:10px;">
             <span>Montant payé :</span>
             <span class="amount" id="checkoutTotal3">CHF 0.-</span>
@@ -359,7 +302,7 @@
       </div>
       <div>
         <h4>Pratique</h4>
-        <a href="#top">Tarifs & billets</a>
+        <a href="/tarifs.html">Tarifs & billets</a>
         <a href="/index.html#horaires">Horaires & accès</a>
         <a href="/reglement.html">Règlement</a>
         <a href="tel:+41244413133">024 441 31 33</a>
@@ -380,10 +323,10 @@
 </footer>
 
 <div class="sticky-cta">
-  <a href="#cartPanel" class="btn btn-primary">Voir mon panier →</a>
+  <a href="#cartPanel" class="btn btn-primary">Voir mon récapitulatif →</a>
 </div>
 
 <script src="/assets/js/site.js" defer></script>
-<script src="/assets/js/tarifs.js" defer></script>
+<script src="/assets/js/garderie.js" defer></script>
 </body>
 </html>

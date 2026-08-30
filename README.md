@@ -18,6 +18,7 @@ horaires en direct) tourne côté client en JavaScript natif.
 index.html              Accueil (hero, activités, galerie, avis, horaires, FAQ)
 tarifs.html              Billetterie en ligne (panier + tunnel de paiement simulé)
 anniversaire.html         Assistant de réservation d'anniversaire (4 étapes)
+garderie.html              Réservation de la garderie vacances (jours de vacances scolaires VD)
 reglement.html            Règlement du parc
 mentions-legales.html     Mentions légales (à valider juridiquement)
 confidentialite.html      Politique de confidentialité / cookies (nLPD)
@@ -31,6 +32,7 @@ assets/css/booking.css     Styles spécifiques à l'assistant d'anniversaire
 assets/js/site.js          Header, menu, FAQ, reveal, cookies, badge horaires
 assets/js/tarifs.js        Panier (persistant), checkout simulé
 assets/js/anniversaire.js  Logique de l'assistant de réservation
+assets/js/garderie.js      Grille de jours (vacances VD) + paiement de la garderie
 ```
 
 ## Démarrer en local
@@ -93,5 +95,9 @@ python3 -m http.server 8000
       Analytics 4 réel pour activer la mesure d'audience.
 - [ ] Vérifier les coordonnées GPS exactes du parc dans le JSON-LD
       (`index.html`) via Google Maps.
+- [ ] Recopier chaque année le calendrier officiel des vacances scolaires
+      vaudoises (vd.ch) dans `PERIODS` (`assets/js/garderie.js`) : les dates
+      2026-2027 actuelles proviennent de sources tierces (accès direct à
+      vd.ch bloqué depuis cet environnement), à recouper avant mise en ligne.
 - [ ] Remplacer/optimiser les images (formats WebP/AVIF, CDN) si elles ne
       sont plus servies depuis `urba-kids.ch`.

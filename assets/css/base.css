@@ -172,6 +172,17 @@ header.scrolled{background:rgba(255,252,245,.92);backdrop-filter:blur(10px);padd
   padding:14px;transform:rotate(6deg);font-family:var(--mono);font-size:11px;animation:floaty 6s ease-in-out infinite;animation-delay:.6s;
 }
 .ticket-mini b{display:block;font-family:var(--display);font-size:15px;color:var(--ink);}
+.hero-mascot{position:absolute;bottom:-6px;left:-16px;width:120px;animation:floaty 5s ease-in-out infinite;animation-delay:1.8s;}
+.hero-mascot-bubble{
+  position:absolute;top:-38px;left:58px;white-space:nowrap;background:#fff;border:1.5px solid var(--line);
+  border-radius:100px;padding:7px 14px;font-family:var(--display);font-weight:700;font-size:12.5px;color:var(--ink);
+  box-shadow:var(--shadow);
+}
+.hero-mascot-bubble::after{
+  content:"";position:absolute;left:16px;bottom:-6px;width:11px;height:11px;background:#fff;
+  border-right:1.5px solid var(--line);border-bottom:1.5px solid var(--line);transform:rotate(45deg);
+}
+@media (max-width:980px){ .hero-mascot{display:none;} }
 .scroll-cue{
   position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;color:var(--ink);
   display:flex;flex-direction:column;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;
@@ -238,6 +249,11 @@ section{padding:88px 0;}
 
 /* REVIEWS */
 .reviews-section{background:linear-gradient(160deg, var(--tint-blue), var(--tint-peach));color:var(--ink);border-radius:36px;margin:0 24px;padding:70px 0;border:1px solid var(--line);}
+/* `.wrap` also sets margin:0 auto (to center up to max-width:1180px); combined
+   with `.reviews-section`/`.final-cta` on the same element, cascade order made
+   their margin:0 24px win, so the block hugged the left edge on wide screens
+   instead of being centered. Higher-specificity override restores centering. */
+.wrap.reviews-section, .wrap.final-cta{margin-left:auto;margin-right:auto;}
 .reviews-section .section-head p{color:#5a6580;}
 .reviews-section .section-head{color:var(--ink);}
 .reviews-head-badge{display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:18px;}
@@ -253,23 +269,37 @@ section{padding:88px 0;}
 
 /* PRICING / TICKETS */
 .pricing-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start;}
-.ticket{
-  background:#fff;border-radius:20px;box-shadow:var(--shadow);display:flex;margin-bottom:18px;overflow:hidden;border:1px solid var(--line);
-}
-.ticket-main{flex:1;padding:20px 22px;position:relative;}
-.ticket-main h4{font-size:17px;margin-bottom:4px;}
-.ticket-main p{font-size:13.5px;color:#5a6580;margin-bottom:10px;}
 .price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
 .price-online{font-family:var(--mono);font-weight:700;font-size:22px;color:var(--grass);}
 .price-onsite{font-family:var(--mono);font-size:14px;color:#9aa3b8;text-decoration:line-through;}
-.save-badge{background:var(--grass);color:#fff;font-family:var(--mono);font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px;}
-.ticket-stub{
-  width:118px;flex-shrink:0;border-left:2px dashed var(--line);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px 8px;background:var(--paper);position:relative;
+.save-badge{background:var(--grass);color:#fff;font-family:var(--mono);font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px;flex-shrink:0;}
+
+/* Cartes de tarifs "fancy" */
+.price-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px;}
+.price-card{
+  background:#fff;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;
+  display:flex;flex-direction:column;position:relative;transition:transform .2s ease, box-shadow .2s ease;
 }
-.ticket-stub::before,.ticket-stub::after{content:"";position:absolute;width:16px;height:16px;background:var(--cream);border-radius:50%;left:-9px;}
-.ticket-stub::before{top:-9px;}
-.ticket-stub::after{bottom:-9px;}
+.price-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -16px rgba(51,64,95,.28);}
+.price-card.featured{border-color:var(--coral);border-width:2px;}
+.price-card-ribbon{
+  position:absolute;top:16px;right:-34px;background:var(--coral);color:#fff;font-family:var(--display);font-weight:700;
+  font-size:10.5px;letter-spacing:.03em;padding:5px 40px;transform:rotate(35deg);box-shadow:0 2px 6px rgba(0,0,0,.15);z-index:2;
+}
+.price-card-top{padding:20px 22px 16px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;}
+.price-card-icon{width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;font-size:21px;}
+.price-card-body{padding:0 22px 22px;display:flex;flex-direction:column;flex:1;}
+.price-card-body h2{font-size:18.5px;margin-bottom:2px;}
+.price-card-sub{font-size:12.5px;color:#5a6580;margin-bottom:14px;}
+.price-card-amount{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:14px;}
+.price-card-amount .price-online{font-size:28px;}
+.price-card-features{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:7px;flex-grow:1;}
+.price-card-features li{font-size:12.5px;color:#4a5670;padding-left:20px;position:relative;line-height:1.4;}
+.price-card-features li::before{content:"✓";position:absolute;left:0;color:var(--grass);font-weight:700;}
+.price-card-cta{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:14px;border-top:1px dashed var(--line);}
+.price-card-cta small{font-family:var(--mono);font-size:11px;color:#8a93ab;}
+@media (max-width:640px){ .price-cards{grid-template-columns:1fr;} }
+
 .qty-control{display:flex;align-items:center;gap:8px;background:#fff;border-radius:100px;border:1.5px solid var(--line);padding:4px;}
 .qty-control button{width:26px;height:26px;border-radius:50%;border:none;background:var(--ink);color:#fff;font-family:var(--display);font-weight:700;cursor:pointer;font-size:15px;line-height:1;}
 .qty-control button:disabled{opacity:.35;cursor:not-allowed;}
@@ -377,7 +407,32 @@ footer a:hover{color:var(--coral);}
 }
 .sticky-cta.show{transform:translateY(0);}
 .sticky-cta .btn{flex:1;}
-@media (max-width:700px){ .sticky-cta{display:flex;} body{padding-bottom:74px;} }
+@media (max-width:700px){ .sticky-cta{display:flex;} body{padding-bottom:74px;} .mascot-widget{bottom:90px;} }
+
+/* Urbo, la mascotte — widget flottant injecté par site.js sur toutes les pages */
+.mascot-widget{position:fixed;left:16px;bottom:16px;z-index:85;display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+.mascot-btn{
+  width:64px;height:64px;border-radius:50%;background:#fff;border:2px solid var(--line);box-shadow:var(--shadow);
+  cursor:pointer;padding:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  animation:mascotBob 3.2s ease-in-out infinite;
+}
+.mascot-btn:hover{border-color:var(--coral);}
+.mascot-btn svg{width:100%;height:100%;}
+.mascot-arm{transform-origin:70% 32%;animation:mascotWave 2.6s ease-in-out infinite;}
+@keyframes mascotBob{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-6px) rotate(2deg);}}
+@keyframes mascotWave{0%,100%{transform:rotate(0deg);}25%{transform:rotate(-18deg);}50%{transform:rotate(0deg);}75%{transform:rotate(-10deg);}}
+.mascot-bubble{
+  position:relative;max-width:230px;background:#fff;border:1.5px solid var(--line);border-radius:16px;
+  padding:14px 30px 14px 14px;font-size:13px;line-height:1.45;color:var(--ink);box-shadow:var(--shadow);
+  opacity:0;transform:translateY(8px) scale(.95);transition:opacity .2s ease, transform .2s ease;pointer-events:none;
+}
+.mascot-bubble.show{opacity:1;transform:none;pointer-events:auto;}
+.mascot-bubble p{margin:0;}
+.mascot-bubble::after{
+  content:"";position:absolute;left:22px;bottom:-7px;width:14px;height:14px;background:#fff;
+  border-right:1.5px solid var(--line);border-bottom:1.5px solid var(--line);transform:rotate(45deg);
+}
+.mascot-close{position:absolute;top:6px;right:8px;background:none;border:none;font-size:15px;color:#8a93ab;cursor:pointer;line-height:1;padding:2px;}
 
 /* Cookie / consentement */
 .cookie-banner{
@@ -408,6 +463,8 @@ footer a:hover{color:var(--coral);}
 /* Page 404 */
 .error-page{min-height:80vh;display:flex;align-items:center;padding-top:150px;}
 .error-page .wrap{text-align:center;}
+.error-mascot{width:100px;margin:0 auto 6px;transform:rotate(-8deg);animation:mascotBob 3.2s ease-in-out infinite;}
+.celebrate-mascot{width:90px;margin:0 auto 6px;animation:mascotBob 2.2s ease-in-out infinite;}
 .error-code{font-family:var(--display);font-weight:800;font-size:clamp(70px,14vw,140px);color:var(--sky);line-height:1;margin-bottom:0;}
 .error-page p{max-width:460px;margin:12px auto 26px;color:#4a5670;font-size:17px;}
 .error-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
@@ -432,11 +489,6 @@ footer a:hover{color:var(--coral);}
   .reviews-section, .final-cta{margin:0 12px;border-radius:26px;padding:50px 20px;}
 }
 @media (max-width: 560px){
-  .ticket{flex-direction:column;}
-  .ticket-stub{width:100%;border-left:none;border-top:2px dashed var(--line);flex-direction:row;}
-  .ticket-stub::before,.ticket-stub::after{top:-9px;bottom:auto;}
-  .ticket-stub::before{left:-9px;}
-  .ticket-stub::after{left:auto;right:-9px;}
   .footer-grid{grid-template-columns:1fr;}
 }
 @media (prefers-reduced-motion: reduce){

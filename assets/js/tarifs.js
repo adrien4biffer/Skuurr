@@ -49,6 +49,19 @@
   }
 
   function el(id) { return document.getElementById(id); }
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  /* Un billet acheté aujourd'hui reste valable 18 mois — ex. acheté le
+   * 03.10.2026, il expire le 03.04.2028. setMonth() gère nativement le
+   * report d'année si on dépasse décembre. */
+  function addMonths(date, months) {
+    var d = new Date(date.getTime());
+    d.setMonth(d.getMonth() + months);
+    return d;
+  }
+  function formatDateCH(date) {
+    return pad(date.getDate()) + '.' + pad(date.getMonth() + 1) + '.' + date.getFullYear();
+  }
 
   function renderCart() {
     var linesEl = el('cartLines');
@@ -106,9 +119,11 @@
       }
     });
     el('checkoutLines').innerHTML = html;
-    el('checkoutSavings').innerHTML = totals.savings > 0
-      ? '🎉 En achetant en ligne aujourd\'hui, vous économisez <strong>CHF ' + totals.savings + '.-</strong> par rapport au tarif sur place.'
+    var validUntil = formatDateCH(addMonths(new Date(), 18));
+    var savingsMsg = totals.savings > 0
+      ? '🎉 En achetant en ligne aujourd\'hui, vous économisez <strong>CHF ' + totals.savings + '.-</strong> par rapport au tarif sur place.<br>'
       : '';
+    el('checkoutSavings').innerHTML = savingsMsg + '🗓️ Vos billets seront valables jusqu\'au <strong>' + validUntil + '</strong> (18 mois après achat).';
     ['checkoutTotal', 'checkoutTotal2', 'checkoutTotal3'].forEach(function (id) {
       var target = el(id);
       if (target) target.textContent = 'CHF ' + totals.total + '.-';
@@ -164,6 +179,8 @@
     // Simulation de paiement (démo) — à remplacer par un vrai PSP suisse
     // (Datatrans, Wallee, Stripe...) prenant en charge TWINT/carte/PostFinance.
     setTimeout(function () {
+      var validityEl = el('ticketValidity');
+      if (validityEl) validityEl.textContent = 'Vos billets sont valables jusqu\'au ' + formatDateCH(addMonths(new Date(), 18)) + ' (18 mois après achat).';
       showCheckoutStep('checkoutStepSuccess');
       cart = { entree: 0, abo10: 0, labyrinthe: 0, combi: 0 };
       renderCart();

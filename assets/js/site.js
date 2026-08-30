@@ -56,6 +56,80 @@
     else document.addEventListener('DOMContentLoaded', fn);
   }
 
+  /* ---------------------------------------------------------------------
+   * Urbo, la mascotte Urba Kids — petit copain flottant présent sur toutes
+   * les pages (widget injecté en JS pour ne pas dupliquer le SVG partout).
+   * Clic = astuce ou anecdote aléatoire dans une bulle.
+   * ------------------------------------------------------------------- */
+  var MASCOT_SVG =
+    '<svg viewBox="0 0 100 120" role="img" aria-hidden="true">' +
+    '<ellipse cx="50" cy="66" rx="36" ry="40" fill="#FF8F87"/>' +
+    '<ellipse cx="50" cy="75" rx="18" ry="22" fill="#FFFBF3"/>' +
+    '<circle cx="50" cy="77" r="7" fill="#FFD166"/>' +
+    '<line x1="50" y1="27" x2="50" y2="13" stroke="#33405F" stroke-width="3" stroke-linecap="round"/>' +
+    '<circle cx="50" cy="10" r="6" fill="#FFD166"/>' +
+    '<ellipse cx="18" cy="70" rx="8" ry="14" fill="#FF8F87" transform="rotate(-15 18 70)"/>' +
+    '<g class="mascot-arm"><ellipse cx="82" cy="64" rx="8" ry="15" fill="#FF8F87"/></g>' +
+    '<circle cx="37" cy="55" r="10" fill="#fff"/>' +
+    '<circle cx="63" cy="55" r="10" fill="#fff"/>' +
+    '<circle cx="39" cy="57" r="4" fill="#33405F"/>' +
+    '<circle cx="65" cy="57" r="4" fill="#33405F"/>' +
+    '<circle cx="40.5" cy="55.5" r="1.4" fill="#fff"/>' +
+    '<circle cx="66.5" cy="55.5" r="1.4" fill="#fff"/>' +
+    '<circle cx="26" cy="66" r="6" fill="#FFD166" opacity=".55"/>' +
+    '<circle cx="74" cy="66" r="6" fill="#FFD166" opacity=".55"/>' +
+    '<path d="M40 72 Q50 82 60 72" stroke="#33405F" stroke-width="3" fill="none" stroke-linecap="round"/>' +
+    '<ellipse cx="38" cy="108" rx="9" ry="7" fill="#33405F"/>' +
+    '<ellipse cx="62" cy="108" rx="9" ry="7" fill="#33405F"/>' +
+    '</svg>';
+
+  var MASCOT_TIPS = [
+    "Astuce : les chaussettes sont obligatoires dans les structures de jeux — les tiennes peuvent être aussi rigolotes que moi ! 🧦",
+    "Le saviez-vous ? Urba Byrinthe fête sa 9ᵉ enquête, imaginée avec Christine Pompéï ! 🌽",
+    "N'oublie pas ton goûter avant de jouer, l'énergie ça se prépare ! 🍏",
+    "Astuce : réserve tes billets en ligne, c'est toujours moins cher qu'au guichet ! 🎟️",
+    "Le parc est ouvert 7j/7 (sauf le 25 décembre) — même les jours de pluie ! ☔",
+    "Un anniversaire à organiser ? Va voir la page Anniversaires, je t'attends là-bas ! 🎂",
+    "Un parking gratuit t'attend juste devant le parc. 🚗",
+    "Les vacances arrivent ? La garderie m'accueille dès 5 ans ! 🧸",
+  ];
+
+  function initMascot() {
+    if (document.getElementById('mascotWidget') || !document.body) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'mascot-widget';
+    wrap.id = 'mascotWidget';
+    wrap.innerHTML =
+      '<div class="mascot-bubble" id="mascotBubble" role="status" aria-live="polite">' +
+      '<button type="button" class="mascot-close" aria-label="Fermer la bulle">&times;</button>' +
+      '<p id="mascotBubbleText"></p></div>' +
+      '<button type="button" class="mascot-btn" id="mascotBtn" aria-label="Astuce d\'Urbo, la mascotte Urba Kids">' +
+      MASCOT_SVG +
+      '</button>';
+    document.body.appendChild(wrap);
+
+    var bubble = document.getElementById('mascotBubble');
+    var bubbleText = document.getElementById('mascotBubbleText');
+    var btn = document.getElementById('mascotBtn');
+
+    function showTip() {
+      bubbleText.textContent = MASCOT_TIPS[Math.floor(Math.random() * MASCOT_TIPS.length)];
+      bubble.classList.add('show');
+    }
+    btn.addEventListener('click', function () {
+      if (bubble.classList.contains('show')) bubble.classList.remove('show');
+      else showTip();
+    });
+    bubble.querySelector('.mascot-close').addEventListener('click', function (e) {
+      e.stopPropagation();
+      bubble.classList.remove('show');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) bubble.classList.remove('show');
+    });
+  }
+  window.URBA_KIDS.initMascot = initMascot;
+
   ready(function () {
     /* ---------------- Header scroll state ---------------- */
     var header = document.getElementById('siteHeader');
@@ -244,18 +318,22 @@
       try { stored = localStorage.getItem(CONSENT_KEY); } catch (err) { /* stockage indisponible */ }
       if (!stored) {
         banner.classList.add('show');
-      } else if (stored === 'accepted') {
-        loadAnalytics();
+      } else {
+        if (stored === 'accepted') loadAnalytics();
+        initMascot(); // pas de bandeau à l'écran : Urbo peut s'installer tout de suite
       }
       var setConsent = function (value) {
         try { localStorage.setItem(CONSENT_KEY, value); } catch (err) { /* ignore */ }
         banner.classList.remove('show');
         if (value === 'accepted') loadAnalytics();
+        initMascot(); // bandeau fermé : la place est libre en bas de l'écran
       };
       var acceptBtn = banner.querySelector('[data-cookie-accept]');
       var declineBtn = banner.querySelector('[data-cookie-decline]');
       if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent('accepted'); });
       if (declineBtn) declineBtn.addEventListener('click', function () { setConsent('declined'); });
+    } else {
+      initMascot();
     }
 
     function loadAnalytics() {

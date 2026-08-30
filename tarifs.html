@@ -101,6 +101,14 @@
         <span class="hub-ico" style="background:#FF8F87;">🏰</span>
         <span class="hub-txt"><strong>Activités</strong><small>Centre de jeux, Urba Byrinthe…</small></span>
       </a>
+      <a class="hub-tile" href="/centre-de-jeux.html">
+        <span class="hub-ico" style="background:#E8F6FF;">🎠</span>
+        <span class="hub-txt"><strong>Centre de jeux</strong><small>Toutes les activités en détail</small></span>
+      </a>
+      <a class="hub-tile" href="/urba-byrinthe.html">
+        <span class="hub-ico" style="background:#FFF3D6;">🌽</span>
+        <span class="hub-txt"><strong>Urba Byrinthe</strong><small>Le labyrinthe de maïs</small></span>
+      </a>
       <a class="hub-tile" href="/index.html#galerie">
         <span class="hub-ico" style="background:#B9A8EA;">📸</span>
         <span class="hub-txt"><strong>Galerie</strong><small>Le parc en images</small></span>
@@ -164,90 +172,128 @@
       </div>
 
       <div class="pricing-layout">
-        <div class="reveal">
-          <div class="ticket">
-            <div class="ticket-main">
-              <h2 style="font-size:17px;margin-bottom:4px;">Entrée Urba Kids — Enfant 2 à 12 ans</h2>
-              <p>Accès illimité au centre de jeux + 3 jetons offerts (mini voitures, jeux de table).</p>
-              <div class="price-row">
-                <span class="price-online">CHF 11.-</span>
-                <span class="price-onsite">CHF 14.- sur place</span>
-                <span class="save-badge">−3.- réduction web</span>
-              </div>
-            </div>
-            <div class="ticket-stub">
-              <div class="qty-control" data-item="entree">
-                <button type="button" aria-label="Retirer une entrée">−</button>
-                <span id="qty-entree">0</span>
-                <button type="button" aria-label="Ajouter une entrée">+</button>
-              </div>
-              <small style="font-family:var(--mono);font-size:11px;color:#8a7440;">billets</small>
-            </div>
-          </div>
+        <div>
+          <div class="price-cards">
 
-          <div class="ticket">
-            <div class="ticket-main">
-              <h2 style="font-size:17px;margin-bottom:4px;">Abonnement 10 entrées Urba Kids</h2>
-              <p>10 entrées au centre de jeux, valables sans limite de temps, transmissibles en famille.</p>
-              <div class="price-row">
-                <span class="price-online">CHF 110.-</span>
-                <span class="price-onsite">CHF 120.- sur place</span>
-                <span class="save-badge">−10.- réduction web</span>
+            <div class="price-card reveal">
+              <div class="price-card-top" style="background:linear-gradient(135deg,var(--tint-blue),#d8effa);">
+                <span class="price-card-icon">🎟️</span>
+                <span class="save-badge">−3.- web</span>
+              </div>
+              <div class="price-card-body">
+                <h2>Entrée Urba Kids</h2>
+                <p class="price-card-sub">Enfant 2 à 12 ans</p>
+                <div class="price-card-amount">
+                  <span class="price-online">CHF 11.-</span>
+                  <span class="price-onsite">CHF 14.- sur place</span>
+                </div>
+                <ul class="price-card-features">
+                  <li>Accès illimité au centre de jeux</li>
+                  <li>3 jetons offerts inclus</li>
+                  <li>Valable 18 mois après achat</li>
+                </ul>
+                <div class="price-card-cta">
+                  <small>billets</small>
+                  <div class="qty-control" data-item="entree">
+                    <button type="button" aria-label="Retirer une entrée">−</button>
+                    <span id="qty-entree">0</span>
+                    <button type="button" aria-label="Ajouter une entrée">+</button>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="ticket-stub">
-              <div class="qty-control" data-item="abo10">
-                <button type="button" aria-label="Retirer un abonnement">−</button>
-                <span id="qty-abo10">0</span>
-                <button type="button" aria-label="Ajouter un abonnement">+</button>
-              </div>
-              <small style="font-family:var(--mono);font-size:11px;color:#8a7440;">abonnements</small>
-            </div>
-          </div>
 
-          <div class="ticket">
-            <div class="ticket-main">
-              <h2 style="font-size:17px;margin-bottom:4px;">Urba Byrinthe — Labyrinthe de maïs</h2>
-              <p>Adulte et enfant dès 2 ans. Ouvert du 26 juin au 4 octobre 2026.</p>
-              <div class="price-row">
-                <span class="price-online">CHF 6.-</span>
-                <span class="price-onsite">CHF 8.- sur place</span>
-                <span class="save-badge">−2.- réduction web</span>
+            <div class="price-card featured reveal">
+              <span class="price-card-ribbon">Meilleure offre</span>
+              <div class="price-card-top" style="background:linear-gradient(135deg,var(--tint-peach),#ffe6b8);">
+                <span class="price-card-icon">🔖</span>
+                <span class="save-badge">−10.- web</span>
+              </div>
+              <div class="price-card-body">
+                <h2>Abonnement 10 entrées</h2>
+                <p class="price-card-sub">Transmissible en famille</p>
+                <div class="price-card-amount">
+                  <span class="price-online">CHF 110.-</span>
+                  <span class="price-onsite">CHF 120.- sur place</span>
+                </div>
+                <ul class="price-card-features">
+                  <li>10 entrées au centre de jeux</li>
+                  <li>Sans limite de temps d'utilisation</li>
+                  <li>Valable 18 mois après achat</li>
+                </ul>
+                <div class="price-card-cta">
+                  <small>abonnements</small>
+                  <div class="qty-control" data-item="abo10">
+                    <button type="button" aria-label="Retirer un abonnement">−</button>
+                    <span id="qty-abo10">0</span>
+                    <button type="button" aria-label="Ajouter un abonnement">+</button>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="ticket-stub">
-              <div class="qty-control" data-item="labyrinthe">
-                <button type="button" aria-label="Retirer un billet Urba Byrinthe">−</button>
-                <span id="qty-labyrinthe">0</span>
-                <button type="button" aria-label="Ajouter un billet Urba Byrinthe">+</button>
-              </div>
-              <small style="font-family:var(--mono);font-size:11px;color:#8a7440;">billets</small>
-            </div>
-          </div>
 
-          <div class="ticket">
-            <div class="ticket-main">
-              <h2 style="font-size:17px;margin-bottom:4px;">Combi Urba Kids + Urba Byrinthe</h2>
-              <p>Enfant 2 à 12 ans. Le centre de jeux et le labyrinthe dans une seule entrée.</p>
-              <div class="price-row">
-                <span class="price-online">CHF 13.-</span>
-                <span class="price-onsite">CHF 16.- sur place</span>
-                <span class="save-badge">−3.- réduction web</span>
+            <div class="price-card reveal">
+              <div class="price-card-top" style="background:linear-gradient(135deg,var(--tint-mint),#cdf2df);">
+                <span class="price-card-icon">🌽</span>
+                <span class="save-badge">−2.- web</span>
+              </div>
+              <div class="price-card-body">
+                <h2>Urba Byrinthe</h2>
+                <p class="price-card-sub">Labyrinthe de maïs, dès 2 ans</p>
+                <div class="price-card-amount">
+                  <span class="price-online">CHF 6.-</span>
+                  <span class="price-onsite">CHF 8.- sur place</span>
+                </div>
+                <ul class="price-card-features">
+                  <li>Ouvert du 26 juin au 4 octobre 2026</li>
+                  <li>3 parcours au choix, 2 km de sentiers</li>
+                  <li>Valable 18 mois, selon dates d'ouverture</li>
+                </ul>
+                <div class="price-card-cta">
+                  <small>billets</small>
+                  <div class="qty-control" data-item="labyrinthe">
+                    <button type="button" aria-label="Retirer un billet Urba Byrinthe">−</button>
+                    <span id="qty-labyrinthe">0</span>
+                    <button type="button" aria-label="Ajouter un billet Urba Byrinthe">+</button>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="ticket-stub">
-              <div class="qty-control" data-item="combi">
-                <button type="button" aria-label="Retirer un billet combi">−</button>
-                <span id="qty-combi">0</span>
-                <button type="button" aria-label="Ajouter un billet combi">+</button>
+
+            <div class="price-card reveal">
+              <div class="price-card-top" style="background:linear-gradient(135deg,var(--tint-coral),#ffdbd6);">
+                <span class="price-card-icon">🎁</span>
+                <span class="save-badge">−3.- web</span>
               </div>
-              <small style="font-family:var(--mono);font-size:11px;color:#8a7440;">billets</small>
+              <div class="price-card-body">
+                <h2>Combi Urba Kids + Byrinthe</h2>
+                <p class="price-card-sub">Enfant 2 à 12 ans</p>
+                <div class="price-card-amount">
+                  <span class="price-online">CHF 13.-</span>
+                  <span class="price-onsite">CHF 16.- sur place</span>
+                </div>
+                <ul class="price-card-features">
+                  <li>Centre de jeux + labyrinthe de maïs</li>
+                  <li>Le meilleur des deux mondes</li>
+                  <li>Valable 18 mois, selon dates d'ouverture</li>
+                </ul>
+                <div class="price-card-cta">
+                  <small>billets</small>
+                  <div class="qty-control" data-item="combi">
+                    <button type="button" aria-label="Retirer un billet combi">−</button>
+                    <span id="qty-combi">0</span>
+                    <button type="button" aria-label="Ajouter un billet combi">+</button>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
 
           <p class="pricing-fineprint">
             Gratuit pour les moins de 2 ans et les adultes accompagnants. Écoles et groupes para/périscolaires : CHF 7.- (sur inscription, tarif guichet uniquement).
             Abonnements 6 mois (CHF 180.-) et 1 an (CHF 250.-) disponibles sur place ou par téléphone au <a href="tel:+41244413133" style="text-decoration:underline;">024 441 31 33</a>.
+            Sauf mention contraire, chaque billet ou abonnement acheté en ligne est valable <strong>18 mois</strong> à partir de sa date d'achat.
           </p>
         </div>
 
@@ -323,9 +369,28 @@
 
       <div class="checkout-step" id="checkoutStepSuccess">
         <div style="text-align:center;padding:20px 0;">
+          <svg class="celebrate-mascot" viewBox="0 0 100 120" role="img" aria-label="Urbo célèbre avec vous">
+            <circle cx="20" cy="12" r="3" fill="#6EC6EA"/><circle cx="80" cy="16" r="3" fill="#4FC98A"/>
+            <circle cx="12" cy="30" r="2.5" fill="#FFD166"/><circle cx="88" cy="34" r="2.5" fill="#FF8F87"/>
+            <rect x="25" y="4" width="5" height="5" fill="#FFD166" transform="rotate(20 27 6)"/>
+            <rect x="70" y="6" width="5" height="5" fill="#6EC6EA" transform="rotate(-15 72 8)"/>
+            <ellipse cx="50" cy="70" rx="36" ry="40" fill="#FF8F87"/>
+            <ellipse cx="50" cy="79" rx="18" ry="20" fill="#FFFBF3"/>
+            <circle cx="50" cy="80" r="7" fill="#FFD166"/>
+            <path d="M40 30 L60 30 L50 12 Z" fill="#6EC6EA"/><circle cx="50" cy="11" r="4" fill="#FFD166"/>
+            <ellipse cx="16" cy="60" rx="8" ry="15" fill="#FF8F87" transform="rotate(-55 16 60)"/>
+            <ellipse cx="84" cy="60" rx="8" ry="15" fill="#FF8F87" transform="rotate(55 84 60)"/>
+            <circle cx="37" cy="59" r="10" fill="#fff"/><circle cx="63" cy="59" r="10" fill="#fff"/>
+            <circle cx="39" cy="61" r="4" fill="#33405F"/><circle cx="65" cy="61" r="4" fill="#33405F"/>
+            <circle cx="40.5" cy="59.5" r="1.4" fill="#fff"/><circle cx="66.5" cy="59.5" r="1.4" fill="#fff"/>
+            <circle cx="26" cy="70" r="6" fill="#FFD166" opacity=".55"/><circle cx="74" cy="70" r="6" fill="#FFD166" opacity=".55"/>
+            <path d="M38 76 Q50 90 62 76" stroke="#33405F" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <ellipse cx="38" cy="112" rx="9" ry="7" fill="#33405F"/><ellipse cx="62" cy="112" rx="9" ry="7" fill="#33405F"/>
+          </svg>
           <div style="font-size:48px;margin-bottom:10px;">✅</div>
           <h3>Paiement confirmé</h3>
           <p style="color:#4a5670;">Vos e-billets ont été envoyés par e-mail (démonstration). Présentez-les à l'accueil, avec ou sans impression.</p>
+          <p id="ticketValidity" style="color:var(--sky-deep);font-weight:700;font-size:13.5px;"></p>
           <div class="checkout-total-row" style="justify-content:center;gap:10px;">
             <span>Montant payé :</span>
             <span class="amount" id="checkoutTotal3">CHF 0.-</span>
